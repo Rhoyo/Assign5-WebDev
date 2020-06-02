@@ -16,7 +16,7 @@ console.log(tData);
 var app = express();
 var port = process.env.PORT || 3000;
 
-app.engine('handlebars', exphbs({ defaultLayout: null}));
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 
@@ -30,7 +30,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('*', function (req, res) {
-  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+  //res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+  res.status(200).render('404');
 });
 
 app.listen(port, function () {
