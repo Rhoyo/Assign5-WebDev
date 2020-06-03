@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "build": "handlebars ./views/partials/newTwit.handlebars -f public/newTwit.js",
-    "prestart": "npm run build"
+    "build1": "handlebars ./views/partials/modal.handlebars -f public/modal.js",
+    "prestart": "npm run build && npm run build1"
   },
   "repository": {
     "type": "git",
