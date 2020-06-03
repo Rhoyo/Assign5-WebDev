@@ -2,10 +2,13 @@
   <main class="twit-container">
 
     {{#each twitData}}
+
       {{> newTwit}}
-      {{#if @index}}
-        {{> modal}}
-      {{/if}}
+
     {{/each}}
 
     </main>
+
+  {{#ifModal twitData.length}}
+    {{> modal}}
+  {{/ifModal}}
